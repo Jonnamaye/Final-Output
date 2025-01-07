@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Agting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1 style="color: var(--accent-color); margin-bottom: 1.5rem; font-size: 1.8rem;">🐹 Welcome!</h1>
+            <div class="form-tabs">
+                <button class="tab active" data-form="login" onclick="showForm('login')">Login</button>
+                <button class="tab" data-form="signup" onclick="showForm('signup')">Sign Up</button>
+            </div>
+            
+            <form id="loginForm" class="form active">
+                <h2>🏠 Login to Enter</h2>
+                <input type="text" placeholder="Your Hamster Name" required>
+                <input type="password" placeholder="Secret Hamster Password" required>
+                <button type="submit">Enter Credentials 🐹</button>
+            </form>
+
+            <form id="signupForm" class="form">
+                <h2>🌱 Create Your Account </h2>
+                <input type="text" placeholder="Choose Your Hamster Name" required>
+                <input type="password" placeholder="Create Secret Hamster Password" required>
+                <input type="password" placeholder="Confirm Secret Hamster Password" required>
+                <button type="submit">Create Account 🐹</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

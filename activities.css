@@ -1,0 +1,236 @@
+:root {
+    --primary-color: #F4A460;    
+    --secondary-color: #DEB887;  
+    --accent-color: #8B4513;     
+    --text-color: #4A3728;       
+    --light-bg: #FFF8DC;         
+    --card-bg: #FFFFFF;          
+    --border-color: #DEB887;     
+    --hover-shadow: rgba(244, 164, 96, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--light-bg) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="%23DEB887" opacity="0.2"><circle cx="12" cy="12" r="8"/></svg>') repeat;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.logout-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.main-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.category-card {
+    background: var(--card-bg);
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--hover-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '🐹';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover::before {
+    transform: rotate(15deg);
+    opacity: 1;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--hover-shadow);
+    border-color: var(--primary-color);
+}
+
+.category-card h2 {
+    color: var(--accent-color);
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+}
+
+.category-card p {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.section-title {
+    color: var(--accent-color);
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::before,
+.section-title::after {
+    content: '🌱';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+.section-title::before {
+    left: -40px;
+}
+
+.section-title::after {
+    right: -40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px var(--hover-shadow);
+}
+
+.card-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-content h2 {
+    color: var(--accent-color);
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+}
+
+.card-content p {
+    color: var(--text-color);
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.view-btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+footer {
+    
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: white;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .main-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+        padding: 0 60px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
